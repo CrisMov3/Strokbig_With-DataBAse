@@ -1,0 +1,109 @@
+/* --- Variables y Estilos Globales --- */
+:root {
+    --dark-blue: #0F172A;
+    --mid-blue: #334155;
+    --border-color: #E2E8F0;
+    --font-family: 'Poppins', sans-serif;
+    --text-color: #333;
+    --text-dark-blue: #042a63;
+    --background-section-alt: #eef5fd;
+}
+
+/* --- Estilos Base --- */
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+main.report-main {
+    padding-top: 115px; 
+    padding-bottom: 80px;
+    background-color: var(--background-section-alt);
+    min-height: calc(100vh - 195px); /* Asegura que el footer llegue abajo */
+}
+.container {
+    max-width: 1400px; /* Más ancho para la tabla */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.section-padding { padding: 40px 0; } 
+.section-title { text-align: center; font-size: 2.5rem; color: var(--dark-blue); margin-bottom: 40px; }
+
+/* --- Barra de Búsqueda --- */
+.search-bar-container {
+    position: relative;
+    margin-bottom: 30px;
+}
+.search-bar-container i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-size: 1.3rem;
+}
+#search-input {
+    width: 100%;
+    padding: 12px 15px 12px 50px; /* Padding izquierdo para el icono */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: var(--font-family);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+#search-input:focus {
+    border-color: var(--text-dark-blue);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(4, 42, 99, 0.2);
+}
+
+/* --- Contenedor de la Tabla --- */
+.report-table-container {
+    width: 100%;
+    overflow-x: auto; /* Permite scroll horizontal en móvil */
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+#report-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+#report-table th, 
+#report-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    white-space: nowrap; /* Evita que el texto se rompa */
+}
+#report-table thead tr {
+    background-color: var(--text-dark-blue);
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+#report-table tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+#report-table tbody tr:hover {
+    background-color: #eef5fd;
+}
+/* --- Fila de "No hay resultados" --- */
+.no-results-row td {
+    text-align: center;
+    padding: 40px;
+    color: var(--mid-blue);
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+/* Responsive para la tabla */
+@media (max-width: 768px) {
+    .section-title { font-size: 2rem; }
+    #report-table th, 
+    #report-table td {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
